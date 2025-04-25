@@ -1,6 +1,6 @@
 EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
-Aim:
+Aim::
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
 
 Algorithm:
@@ -15,13 +15,43 @@ Else
 6.	Return 0
  
 Program:
+#include <stdio.h>
 
-//type your code here
+#define SIZE 5
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    struct Person people[SIZE];
+    int i;
+
+    for(i = 0; i < SIZE; i++) {
+        printf("Enter name of person %d: ", i + 1);
+        scanf("%s", people[i].name);
+        printf("Enter age of person %d: ", i + 1);
+        scanf("%d", &people[i].age);
+    }
+
+    printf("\nVaccine Eligibility:\n");
+    for(i = 0; i < SIZE; i++) {
+        if(people[i].age > 6)
+            printf("%s is Eligible for Vaccine.\n", people[i].name);
+        else
+            printf("%s is Not Eligible for Vaccine.\n", people[i].name);
+    }
+
+    return 0;
+}
+
 
 
 Output:
 
-//paste your output here
+![Screenshot 2025-04-25 133722](https://github.com/user-attachments/assets/ad76e331-7363-4280-b6dd-1c4a30c13c23)
+
 
 
 Result:
@@ -44,7 +74,38 @@ Algorithm:
  
 Program:
 
-//type your code here
+#include <stdio.h>
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+struct Person getOlder(struct Person p) {
+    p.age += 1;
+    return p;
+}
+
+void displayPerson(struct Person p) {
+    printf("Name: %s\n", p.name);
+    printf("Age: %d\n", p.age);
+}
+
+int main() {
+    struct Person person1, person2;
+
+    printf("Enter name: ");
+    scanf("%s", person1.name);
+    printf("Enter age: ");
+    scanf("%d", &person1.age);
+
+    person2 = getOlder(person1);
+
+    displayPerson(person2);
+
+    return 0;
+}
+
 
 
 
@@ -52,7 +113,8 @@ Program:
 Output:
 
 
-//paste your output here
+
+![Screenshot 2025-04-25 134628](https://github.com/user-attachments/assets/08625420-198b-46b3-8af4-9c4b3accf030)
 
 
 
@@ -86,7 +148,29 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+#include <stdio.h>
+
+int main() {
+    char filename[100];
+    FILE *fp;
+    char content[1000];
+
+    printf("Enter the file name to create/write: ");
+    scanf("%s", filename);
+
+    fp = fopen(filename, "w");
+    if (fp == NULL) {
+        return 1;
+    }
+
+    getchar();
+    fgets(content, sizeof(content), stdin);
+
+    fputs(content, fp);
+    fclose(fp);
+
+    return 0;
+}
 
 
 
@@ -94,12 +178,13 @@ Program:
 Output:
 
 
-//paste your output here
 
 
 
 
 
+
+![Screenshot 2025-04-25 134905](https://github.com/user-attachments/assets/59480726-8711-4fb4-afa3-a51801249c5f)
 
 
 
@@ -132,8 +217,30 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+#include <stdio.h>
 
-//type your code here
+int main() {
+    char filename[100];
+    FILE *fp;
+    char content[1000];
+
+    printf("Enter the file name: ");
+    scanf("%s", filename);
+
+    fp = fopen(filename, "w");
+    if (fp == NULL) {
+        return 1;
+    }
+
+    getchar();
+    printf("Enter text to insert into the file:\n");
+    fgets(content, sizeof(content), stdin);
+
+    fputs(content, fp);
+    fclose(fp);
+
+    return 0;
+}
 
 
 
@@ -141,9 +248,10 @@ Program:
 Output:
 
 
-//paste your output here
 
 
+
+![Screenshot 2025-04-25 135056](https://github.com/user-attachments/assets/907cdfd2-fb1c-4fb9-bd0e-25c4b82a4b43)
 
 
 
@@ -186,8 +294,33 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+#include <stdio.h>
 
-//type your code here
+struct Student {
+    int rollNo;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s;
+
+    printf("Enter student roll number: ");
+    scanf("%d", &s.rollNo);
+
+    printf("Enter student name: ");
+    scanf("%s", s.name);
+
+    printf("Enter student marks: ");
+    scanf("%f", &s.marks);
+
+    printf("\n--- Student Details ---\n");
+    printf("Roll Number: %d\n", s.rollNo);
+    printf("Name: %s\n", s.name);
+    printf("Marks: %.2f\n", s.marks);
+
+    return 0;
+}
 
 
 
@@ -195,7 +328,10 @@ Program:
 Output:
 
 
-//paste your output here
+![Screenshot 2025-04-25 135237](https://github.com/user-attachments/assets/a70e2568-4596-4161-b503-f2ee34a6c42d)
+
+
+
 
 
 
