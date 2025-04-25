@@ -116,11 +116,23 @@ Algorithm:
 
 Program:
 
-//type your code here
+int front,rear,size=3;
+char queue[50];
+
+void enqueue(char data)
+{
+    if(rear<size-1)
+    {
+        if(front==-1)
+        front=0;
+        queue[++rear]=data;
+    }
+}
 
 Output:
 
-//paste your output here
+![Screenshot 2025-04-25 143909](https://github.com/user-attachments/assets/2f44d0a4-6d94-4125-bc86-3f7b299f5a4d)
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -151,11 +163,24 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
+int front, rear;
+void dequeue()
+{
+if(front==-1||front>rear)
+{
+printf("Queue Underflow.\n");
+
+}
+else
+{
+front++;
+}
+}
 
 Output:
 
-//paste your output here
+
+![Screenshot 2025-04-25 144220](https://github.com/user-attachments/assets/bba88e5c-462b-4c56-920b-66291ec75e00)
 
 
 Result:
