@@ -13,12 +13,19 @@ Algorithm:
  
 Program:
 
-//type your code here
+float stack[100];
+int top;
+void display()
+{
+    for(int i=top;i>=0;i--)
+    printf("%.1f ",stack[i]);
+}
+
 
 Output:
 
-//paste your output here
 
+![Screenshot 2025-04-25 142102](https://github.com/user-attachments/assets/477ca12c-e9b0-444c-81ff-4edc93c66763)
 
 
 Result:
@@ -36,11 +43,22 @@ Algorithm:
  
 Program:
 
-//type your code here
+
+char stack[100];
+int size=3,top=-1;
+void push (float data)
+{
+    if(top==size-1)
+    printf("stack is full\n");
+    else
+    {
+        stack[++top]=data;
+    }
+}
 
 Output:
 
-//paste your output here
+![Screenshot 2025-04-25 142208](https://github.com/user-attachments/assets/97277f5b-70c7-4bdc-acc3-46c34c8367ca)
 
 
 
@@ -62,11 +80,23 @@ Algorithm:
  
 Program:
 
-//type your code here
+int queue[50], rear=-1, front=-1;
+void display()
+{
+     if(front==-1||rear==-1)
+     printf("No elements to display");
+     else
+    for(int i=front;i<=rear;i++)
+    {
+        printf("%d\n",queue[i]);
+    }
+   
+}
 
 Output:
 
-//paste your output here
+
+![Screenshot 2025-04-25 142332](https://github.com/user-attachments/assets/507bda1f-296f-4fea-9726-0e827615ac0f)
 
 
 Result:
