@@ -50,8 +50,9 @@ int main() {
 
 Output:
 
-![Screenshot 2025-04-25 133722](https://github.com/user-attachments/assets/ad76e331-7363-4280-b6dd-1c4a30c13c23)
 
+
+![Screenshot 2025-04-25 143227](https://github.com/user-attachments/assets/48a76a63-d5e7-4f10-99d4-93adcdc17537)
 
 
 Result:
@@ -149,28 +150,25 @@ Use scanf to input the file name into the name array.
 Program:
 
 #include <stdio.h>
+#include <stdio.h>
 
 int main() {
-    char filename[100];
-    FILE *fp;
-    char content[1000];
+    char fileName[50];
+    FILE *filePointer;
+    scanf("%s", fileName);
+    filePointer = fopen(fileName, "w");
 
-    printf("Enter the file name to create/write: ");
-    scanf("%s", filename);
-
-    fp = fopen(filename, "w");
-    if (fp == NULL) {
+    if (filePointer == NULL) {
+        printf("Unable to create file.\n");
         return 1;
     }
+    fclose(filePointer);
 
-    getchar();
-    fgets(content, sizeof(content), stdin);
-
-    fputs(content, fp);
-    fclose(fp);
+    printf("%s File Created Successfully\n%s File Opened\n%s File Closed", fileName,fileName,fileName);
 
     return 0;
 }
+
 
 
 
@@ -182,9 +180,10 @@ Output:
 
 
 
+![Screenshot 2025-04-25 143128](https://github.com/user-attachments/assets/3b03028b-8fc0-443e-a193-fa53944d072a)
 
 
-![Screenshot 2025-04-25 134905](https://github.com/user-attachments/assets/59480726-8711-4fb4-afa3-a51801249c5f)
+
 
 
 
@@ -220,24 +219,23 @@ Program:
 #include <stdio.h>
 
 int main() {
-    char filename[100];
-    FILE *fp;
-    char content[1000];
-
-    printf("Enter the file name: ");
-    scanf("%s", filename);
-
-    fp = fopen(filename, "w");
-    if (fp == NULL) {
+    char fileName[50];
+    FILE *filePointer;
+    int numStudents, rollNumber;
+    scanf("%s", fileName);
+    filePointer = fopen(fileName, "w");
+    if (filePointer == NULL) {
+        printf("Unable to create file.\n");
         return 1;
     }
+    scanf("%d", &numStudents);
+    for (int i = 0; i < numStudents; i++) {
+        scanf("%d", &rollNumber);
+        fprintf(filePointer, "%d\n", rollNumber);
+    }
+    fclose(filePointer);
 
-    getchar();
-    printf("Enter text to insert into the file:\n");
-    fgets(content, sizeof(content), stdin);
-
-    fputs(content, fp);
-    fclose(fp);
+    printf("%s Opened\nData added Successfully", fileName);
 
     return 0;
 }
@@ -251,7 +249,8 @@ Output:
 
 
 
-![Screenshot 2025-04-25 135056](https://github.com/user-attachments/assets/907cdfd2-fb1c-4fb9-bd0e-25c4b82a4b43)
+![Screenshot 2025-04-25 143034](https://github.com/user-attachments/assets/e698f6d9-d1b8-4edf-964a-3545fea5d552)
+
 
 
 
