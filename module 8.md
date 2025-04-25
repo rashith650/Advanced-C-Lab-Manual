@@ -16,7 +16,23 @@ Algorithm:
  
 Program:
 
-//type your code here
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number between 0 and 25: ");
+    scanf("%d", &number);
+
+    if (number >= 0 && number <= 25) {
+        printf("The lowercase letter corresponding to number %d is: %c\n", number, 'a' + number);
+    } else {
+        printf("Invalid input! Please enter a number between 0 and 25.\n");
+    }
+
+    return 0;
+}
+
 
 
 
@@ -24,7 +40,7 @@ Program:
 Output:
 
 
-//paste your output here
+![Screenshot 2025-04-25 140543](https://github.com/user-attachments/assets/cb855ad4-f6f5-4517-9eb6-57176d61286d)
 
 
 
@@ -47,7 +63,25 @@ Algorithm:
  
 Program:
 
-//type your code here
+#include <stdio.h>
+
+int main() {
+    int arr[] = {0, 1, 2, 3, 0, 1, 3, 2, 0, 3};
+    int freq[4] = {0};
+
+    for (int i = 0; i < 10; i++) {
+        if (arr[i] >= 0 && arr[i] <= 3) {
+            freq[arr[i]]++;
+        }
+    }
+
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", freq[i]);
+    }
+
+    return 0;
+}
+
 
 
 
@@ -55,8 +89,8 @@ Program:
 Output:
 
 
-//paste your output here
 
+![Screenshot 2025-04-25 140725](https://github.com/user-attachments/assets/1b3a79d0-5a12-4b7b-889c-86f19e09c5f5)
 
 
 
@@ -84,7 +118,40 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int compare(const void *a, const void *b) {
+    return (*(char *)a - *(char *)b);
+}
+
+void printPermutations(char *str, int l, int r) {
+    if (l == r) {
+        printf("%s\n", str);
+        return;
+    }
+    for (int i = l; i <= r; i++) {
+        char temp = str[l];
+        str[l] = str[i];
+        str[i] = temp;
+        printPermutations(str, l + 1, r);
+        temp = str[l];
+        str[l] = str[i];
+        str[i] = temp;
+    }
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    qsort(str, strlen(str), sizeof(char), compare);
+    printf("All permutations in lexicographical order:\n");
+    printPermutations(str, 0, strlen(str) - 1);
+    return 0;
+}
+
 
 
 
@@ -92,8 +159,9 @@ Program:
 Output:
 
 
-//paste your output here
 
+
+![Screenshot 2025-04-25 141116](https://github.com/user-attachments/assets/5ce58944-cd12-479b-af45-36119ebff83e)
 
 
 
@@ -117,7 +185,30 @@ Algorithm:
  
 Program:
 
-//type your code here
+#include <stdio.h>
+
+int main() {
+    int n, len, i, j, min;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    len = n * 2 - 1;
+
+    for(i = 0; i < len; i++) {
+        for(j = 0; j < len; j++) {
+            min = (i < j) ? i : j;
+            min = (min < len - i - 1) ? min : len - i - 1;
+            min = (min < len - j - 1) ? min : len - j - 1;
+
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
 
 
 
@@ -125,7 +216,8 @@ Program:
 Output:
 
 
-//paste your output here
+
+![Screenshot 2025-04-25 141332](https://github.com/user-attachments/assets/bc73d205-8b30-47b2-a726-2a788929ee43)
 
 
 
@@ -156,7 +248,20 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
+#include <stdio.h>
+
+float square() {
+    float num;
+    printf("Enter a number: ");
+    scanf("%f", &num);
+    return num * num;
+}
+
+int main() {
+    float result = square();
+    printf("The square of the number is: %.2f\n", result);
+    return 0;
+}
 
 
 
@@ -164,8 +269,9 @@ Program:
 Output:
 
 
-//paste your output here
 
+
+![Screenshot 2025-04-25 141444](https://github.com/user-attachments/assets/6e186253-1f38-487c-ba3e-a240ff32893e)
 
 
 
