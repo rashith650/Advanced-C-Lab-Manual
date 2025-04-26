@@ -9,7 +9,7 @@ Algorithm:
 4.	Call the search function and perform other linked list operations as needed.
  
 Program:
-
+```
 struct Node{
     float data; 
     struct Node *next;
@@ -35,6 +35,8 @@ void search(float data)
         printf("Item not found");
     }
 }
+```
+
 Output:
 
 
@@ -57,7 +59,7 @@ Algorithm:
 4.	Call the insert function and perform other linked list operations as needed.
  
 Program:
-
+```
 struct Node{
     int data; 
     struct Node *next;
@@ -84,7 +86,7 @@ void insert(int data)
      
 }
     
-
+```
 
 Output:
 
@@ -109,7 +111,7 @@ Algorithm:
 4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
  
 Program:
-
+```
 struct Node
 {
     struct Node *prev;
@@ -128,7 +130,7 @@ void display()
     }
     
 }
-
+```
 Output:
 
 
@@ -152,7 +154,7 @@ Algorithm:
 5.	Set the new node's prev pointer to the last node and update the last node's next pointer to the new node.
  
 Program:
-
+```
 struct Node
 {
     struct Node *prev;
@@ -194,7 +196,7 @@ void insert(char data)
     
     
 }
-
+```
 Output:
 
 ![Screenshot 2025-04-25 213905](https://github.com/user-attachments/assets/7f0f95bc-e116-41a1-8952-d43db511ea53)
@@ -234,7 +236,7 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 
 Program:
-
+```
 struct Node{
     float data; 
     struct Node *next;
@@ -255,7 +257,7 @@ void delete()
     }
     
 }
-
+```
 Output:
 
 
